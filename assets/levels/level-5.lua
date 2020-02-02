@@ -1,6 +1,6 @@
 return {
 	meta = {
-		_next = "assets/levels/level-6.lua",
+		_next = "assets/levels/end-level.lua",
 		pause = false,
 		info = "LEVEL 5\nSTAY UP"
 	},
