@@ -116,12 +116,10 @@ function Game:update(dt)
     for _, _platform in ipairs(self.platforms) do
         if collide(self.player, _platform) then
             -- there is a collison
-            if(self.player.y < _platform.y) then
+            if(self.player.y <= _platform.y) then
                 self.player.yv = 0
                 on_platform = true
-                self.player.y = _platform.y - 32
-            else
-                self.player.yv = self.player.oyv
+                self.player.y = _platform.y - 34
             end
         end
     end
@@ -147,10 +145,9 @@ function Game:update(dt)
 end
 
 function Game:keypressed(key)
-
     -- if yv (y-velocity) == 0 then we are in the ground
     -- only jump if the player is in the ground
-    if key == "space" and self.player.yv == 0 then
+    if key == "space" and (self.player.yv == 0 or self.player.yv == 300) then
         self.pause = false
         self.player.yv = -self.player.oyv
     end

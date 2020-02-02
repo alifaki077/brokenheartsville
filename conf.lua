@@ -1,6 +1,15 @@
 function love.conf(t)
-    t.version = "11.1"
-    t.title = "MUSHJUMP"
-    t.window.width = 1000
-    t.window.height = 400
+    t.title = "BROKENHEARTSVILLE"
+
+    if t.window then
+        t.window.width = 1000
+        t.window.height = 400
+    end
+    
+    if t.screen then
+        t.screen.width = 1000
+        t.screen.height = 400
+    end
+
+	t.identity = "brokenheartsville"
 end
